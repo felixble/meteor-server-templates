@@ -1,5 +1,5 @@
 import { SpacebarsCompiler } from 'meteor/spacebars-compiler'
-import { Blaze} from 'meteor/blaze'
+import { Blaze } from 'meteor/blaze'
 
 
 export class ServerTemplate {
@@ -9,7 +9,7 @@ export class ServerTemplate {
             data = {};
         }
 
-        var template = new Template(Random.id(), function () {
+        var template = new Blaze.Template(Random.id(), function () {
             var view = this;
             return eval(SpacebarsCompiler.compile(content))();
         });
