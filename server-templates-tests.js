@@ -20,7 +20,6 @@ Tinytest.add('server-templates - compile and render template strings', function 
 });
 
 Tinytest.add('server-templates - compile and render template strings with helpers', function (test) {
-    let date = new Date();
     let content = "Hallo {{name}}, sum: {{calcSum}}";
     let data = {
         name: "4Minitz",
