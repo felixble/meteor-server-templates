@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/felixble/meteor-server-templates.svg?branch=master)](https://travis-ci.org/felixble/meteor-server-templates)
+
 # Server Template engine for meteor
 
 Simple API to use the meteor blaze engine on the server side.
