@@ -1,6 +1,6 @@
 Package.describe({
   name: 'felixble:server-templates',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Server side template engine based on blaze',
   git: 'https://github.com/felixble/meteor-server-templates',
   documentation: 'README.md'
@@ -10,7 +10,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.3.4.1');
   api.use([
     'blaze',
-    'ecmascript',
+    'ecmascript@0.4.6',
     'spacebars',
     'random',
     'spacebars-compiler'
