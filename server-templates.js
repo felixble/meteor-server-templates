@@ -4,7 +4,7 @@ import { Blaze } from 'meteor/blaze'
 
 export class ServerTemplate {
 
-    static render(content, data) {
+    static render(content, data, helpers) {
         if (!data) {
             data = {};
         }
@@ -13,6 +13,10 @@ export class ServerTemplate {
             var view = this;
             return eval(SpacebarsCompiler.compile(content))();
         });
+
+        if (helpers) {
+            template.helpers(helpers);
+        }
 
         return Blaze.toHTMLWithData(template, data);
     }

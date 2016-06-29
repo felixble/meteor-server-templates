@@ -18,3 +18,24 @@ Tinytest.add('server-templates - compile and render template strings', function 
   let expected = "Hallo " + data.name + ", time: " + date;
   test.equal(result, expected);
 });
+
+Tinytest.add('server-templates - compile and render template strings with helpers', function (test) {
+    let date = new Date();
+    let content = "Hallo {{name}}, sum: {{calcSum}}";
+    let data = {
+        name: "4Minitz",
+        value1: 3,
+        value2: 5
+    };
+
+    let helpers = {
+        calcSum: function() {
+            return this.value1 + this.value2;
+        }
+    };
+
+    let result = ServerTemplate.render(content, data, helpers);
+
+    let expected = "Hallo " + data.name + ", sum: " + 8;
+    test.equal(result, expected);
+});
