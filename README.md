@@ -6,7 +6,7 @@ Simple API to use the meteor blaze engine server side.
 
 ## Usage
 
-First import the ServerTemplate module. Then you can use its render function by passing the template as a string together with with the data as parameters for this function. You can also pass helper functions as a third parameter.
+First import the ServerTemplate module. Then you can use its render function by passing the template as a string together with the data as parameters for this function. You can also pass helper functions as a third parameter.
 
 ~~~js
 import { ServerTemplate } from 'meteor/felixble:server-templates'
