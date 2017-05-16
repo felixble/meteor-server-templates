@@ -38,3 +38,17 @@ Tinytest.add('server-templates - compile and render template strings with helper
     let expected = "Hallo " + data.name + ", sum: " + 8;
     test.equal(result, expected);
 });
+
+Tinytest.add('server-templates - loops', function (test) {
+    const content = "{{#each fruits}}{{id}}: {{name}}/n{{/each}}";
+    const expected = "0: apple/n1: banana/n2: cherry/n";
+    const data = {
+        fruits: [
+            {id: 0, name: "apple"},
+            {id: 1, name: "banana"},
+            {id: 2, name: "cherry"}]
+    };
+
+    const result = ServerTemplate.render(content, data);
+    test.equal(result, expected);
+});
